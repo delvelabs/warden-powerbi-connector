@@ -15,7 +15,7 @@ It is meant to handle OAUTH2 authentification towards a specific Warden instance
 1. Open the existing .mproj file or create a new Data Connector project.
 2. Define your instance URL in the `OpenApiWarden.pq` file by setting the `instance_uri` variable.
 3. Create a Public API Client ID and Secret in your Warden instance, as described in [Warden's User Guide](https://delvelabs.atlassian.net/servicedesk/customer/kb/view/586153985).
-4. Set the created Client ID and Secret directly in the `client_id` and `client_secret` files in your project.
+4. Set the created Client ID and Secret directly in the `client_id` and `client_secret` files in your project (rename the existing .template files).
 
 ### Installing:
 1. Build the project in order to create a .mez file. Do make sure that the .mez file size is not null, which could indicate a problem with the build. :warning: Note that a .mez file is only a Zip archive, and will include your `client_id` & `client_secret` which are sensitive information, in plaintext.
@@ -28,7 +28,6 @@ Most contributions are welcome. Simply submit a pull request on [GitHub](https:/
 
 Instruction for contributors:
 * Accept the contributor license agreement.
-* Write tests for your code. Untested code will be rejected.
 
 To report a bug or suggest a feature, open an issue.
 

@@ -1,0 +1,3 @@
+# Avoid sending the sensitive information in those files to Git
+**/client_id
+**/client_secret

@@ -24,7 +24,7 @@ It is meant to handle OAUTH2 authentification towards a specific Warden instance
 
 ## Contributing
 
-Most contributions are welcome. Simply submit a pull request on [GitHub](https://github.com/delvelabs/tachyon/).
+Most contributions are welcome. Simply submit a pull request on [GitHub](https://github.com/delvelabs/warden-powerbi-connector).
 
 Instruction for contributors:
 * Accept the contributor license agreement.

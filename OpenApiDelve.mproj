@@ -19,7 +19,7 @@
     <SuppressCellErrors>False</SuppressCellErrors>
     <MaxRows>1000</MaxRows>
     <ExtensionProject>Yes</ExtensionProject>
-    <Name>OpenApiWarden</Name>
+    <Name>OpenApiDelve</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>false</DebugSymbols>
@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OpenApiWarden.pq">
+    <Compile Include="OpenApiDelve.pq">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="resources.resx">
@@ -52,7 +52,7 @@
     <Compile Include="client_secret">
       <SubType>Content</SubType>
     </Compile>
-    <Content Include="OpenApiWarden.query.pq">
+    <Content Include="OpenApiDelve.query.pq">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>

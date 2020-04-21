@@ -1,4 +1,4 @@
-﻿section OpenApiWarden;
+﻿section OpenApiDelve;
 
 // TODO: add your client id and secret to the embedded files, then write the correct instance URI
 client_id = Text.FromBinary(Extension.Contents("client_id"));
@@ -13,19 +13,19 @@ redirect_uri = "https://oauth.powerbi.com/views/oauthredirect.html" ;
 windowWidth = 800;
 windowHeight = 800;
 
-[DataSource.Kind="OpenApiWarden", Publish="OpenApiWarden.Publish"]
-shared OpenApiWarden.Contents = () =>
+[DataSource.Kind="OpenApiDelve", Publish="OpenApiDelve.Publish"]
+shared OpenApiDelve.Contents = () =>
     let
         credential = Extension.CurrentCredential(),
         token = credential[access_token], 
         headers = [ Authorization = "Bearer " & token ],
-        navTable = OpenApi.Document(Web.Contents(instance_uri & "/api/v2/spec/openapi-2.0.json"), [ Headers = headers, ManualCredentials = true ])
+        navTable = OpenApi.Document(Web.Contents(instance_uri & "/api/v2/spec/openapi-2.0.json?powerbi"), [ Headers = headers, ManualCredentials = true ])
     in
         navTable;
 
 
 // Data Source Kind description
-OpenApiWarden = [
+OpenApiDelve = [
     // enable both OAuth and Key based auth
     Authentication = [
         OAuth = [
@@ -38,11 +38,11 @@ OpenApiWarden = [
 ];
 
 // Data Source UI publishing description
-OpenApiWarden.Publish = [
+OpenApiDelve.Publish = [
     Beta = true,
     Category = "Other",
-    ButtonText = { "OpenAPI - Warden", "OpenAPI - Warden" },
-    LearnMoreUrl = "https://support.wardenscanner.com/"
+    ButtonText = { "OpenAPI - Delve", "OpenAPI - Delve" },
+    LearnMoreUrl = "https://support.delvesecurity.com"
 ];
 
 //

@@ -1,10 +1,10 @@
-﻿section OpenApiDelve;
+﻿section OpenApiVDR;
 
 // TODO: add your client id and secret to the embedded files, then write the correct instance URI
 client_id = Text.FromBinary(Extension.Contents("client_id"));
 client_secret = Text.FromBinary(Extension.Contents("client_secret"));
 
-//TODO: add your instalce URL in that format https://<instance>.wardenscanner.com/
+//TODO: add your instalce URL in that format https://<instance>.vdr.secureworks.com/
 instance_uri = ""; 
 
 
@@ -13,8 +13,8 @@ redirect_uri = "https://oauth.powerbi.com/views/oauthredirect.html" ;
 windowWidth = 800;
 windowHeight = 800;
 
-[DataSource.Kind="OpenApiDelve", Publish="OpenApiDelve.Publish"]
-shared OpenApiDelve.Contents = () =>
+[DataSource.Kind="OpenApiVDR", Publish="OpenApiVDR.Publish"]
+shared OpenApiDVDRe.Contents = () =>
     let
         credential = Extension.CurrentCredential(),
         token = credential[access_token], 
@@ -25,7 +25,7 @@ shared OpenApiDelve.Contents = () =>
 
 
 // Data Source Kind description
-OpenApiDelve = [
+OpenApiVDR = [
     // enable both OAuth and Key based auth
     Authentication = [
         OAuth = [
@@ -38,11 +38,10 @@ OpenApiDelve = [
 ];
 
 // Data Source UI publishing description
-OpenApiDelve.Publish = [
-    Beta = true,
+OpenApiVDR.Publish = [
     Category = "Other",
-    ButtonText = { "OpenAPI - Delve", "OpenAPI - Delve" },
-    LearnMoreUrl = "https://support.delvesecurity.com"
+    ButtonText = { "OpenAPI - VDR", "OpenAPI - VDR" },
+    LearnMoreUrl = "https://docs.ctpx.secureworks.com/vdr/api/using_public_api_via_power_bi_desktop/"
 ];
 
 //
